@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Facebook",
+  "name": "Facebook helps you connect and share with the people in your life.",
   "icons": [
     {
       "src": "favicon.ico",
